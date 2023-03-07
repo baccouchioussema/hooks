@@ -1,9 +1,11 @@
-import React,{useState} from "react";
+import  React, {useState} from "react";
+import {Routes,Route} from "react-router-dom"
 
 import {movieData} from"./MovieData"
 import MoviesListe from './components/MoviesList';
 import AppNavbar from "./components/AppNavbar"
 import AddMovie from "./components/AddMovie";
+import Trailer from "./components/Trailer";
 
 function App() {
   const [movies , setMovies] = useState(movieData);
@@ -14,9 +16,13 @@ const handleMovie =(movie)=>{
 }
   return(
     <div>
+     
       <AppNavbar setSearchRating = {setSearchRating} setSearchName= {setSearchName} />
-      <AddMovie handleMovie={handleMovie}/>
-<MoviesListe movies={movies} searchRating={searchRating} searchName={searchName}/>
+      <Routes>
+      <Route path="/add" element={ <AddMovie handleMovie={handleMovie}/>}/>
+      <Route path ="/" element={<MoviesListe movies={movies} searchRating={searchRating} searchName={searchName}/>} />
+      <Route path="/movies/trailer/:id" element={<Trailer movies={movies}/>} />
+      </Routes>
     </div>
   )
 }

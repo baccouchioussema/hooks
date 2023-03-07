@@ -1,4 +1,4 @@
-import react ,{useState} from "react"
+import React ,{useState} from "react"
 import { Modal , Button, Form} from 'react-bootstrap'
 const AddMovie = (handleMovie) => {
     const [name , setName ] = useState("");

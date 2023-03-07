@@ -4,7 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import {Link} from "react-router-dom" 
 import Rating from '@mui/material/Rating';
 import Typography from '@mui/material/Typography';
 const AppNavbar = ({setSearchName , setSearchRating}) => {
@@ -12,7 +12,10 @@ const AppNavbar = ({setSearchName , setSearchRating}) => {
     <div>
         <Navbar bg="light" expand="lg">
       <Container fluid>
-        <Navbar.Brand href="#">oussema</Navbar.Brand>
+        <Navbar.Brand href="#"><Link to="/"> oussema</Link></Navbar.Brand>
+        
+
+       
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -30,6 +33,7 @@ const AppNavbar = ({setSearchName , setSearchRating}) => {
       
             
           </Nav>
+         
           <Form className="d-flex">
             <Form.Control
               type="search"
@@ -45,7 +49,7 @@ const AppNavbar = ({setSearchName , setSearchRating}) => {
         </Navbar.Collapse>
       </Container>
     </Navbar>
-
+   
 
 
     </div>
